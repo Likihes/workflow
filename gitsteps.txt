@@ -63,11 +63,7 @@ if you add and commit the file local repo
 	git commit -a -m "change in logs cmds"
 
 
-
-
-
-
-
+git clean -n
 
 
 	
