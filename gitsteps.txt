@@ -40,7 +40,7 @@ Step 9: Push Code to Remote
 
 
 check the commit id 
-	git logs --online
+	git log --online
 
 Create a branch
 ===============
