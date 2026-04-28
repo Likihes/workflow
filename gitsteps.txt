@@ -58,6 +58,15 @@ switch one branch to another branch
 list the branch
 	git branch
 
+if you add and commit the file local repo
+===================================
+	git commit -a -m "change in logs cmds"
+
+
+
+
+
+
 
 
 
