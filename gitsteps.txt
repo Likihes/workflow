@@ -1,0 +1,14 @@
+Step 0: Install & Verify Git
+	git --version
+
+Step 1: Configure Git (one-time setup)
+	git config --global user.name "Your Name"
+	git config --global user.email "your@email.com"
+
+Step 2: Create Your Project Folder
+	mkdir my-project
+	cd my-project
+Add a file:
+
+	echo "Hello DevOps" > app.txt
+
