@@ -1,0 +1,43 @@
+🔸 Types of Reset
+
+1. Soft (keeps changes staged)
+git reset --soft HEAD~1
+
+👉 Removes commit, but keeps code in staging
+
+2. Mixed (default)
+git reset HEAD~1
+
+👉 Removes commit, keeps code unstaged
+
+3. Hard (dangerous 🚨)
+git reset --hard HEAD~1
+
+👉 Deletes commit + code completely
+
+---------------------
+
+🔹 DevOps Real Scenario
+❌ Wrong deployment pushed
+Use:
+git revert <commit-id>
+git push
+
+👉 Safely rollback production
+
+❌ Local mistake before push
+Use:
+git reset --soft HEAD~1
+
+👉 Fix commit and recommit
+
+🔥 Interview Answer (30 sec)
+
+“Git reset is used to move the branch pointer backward and can remove commits, 
+which rewrites history, so it’s mainly used for local changes. 
+Git revert, creates a new commit that undoes a previous commit, preserving history and making it safe for shared branches
+
+git revert 
+it remove new content in existing file and old content is remaning existing file
+and also remove a new content in new file and delet the new file and maintain a history
+
