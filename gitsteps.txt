@@ -40,7 +40,7 @@ Step 9: Push Code to Remote
 
 
 check the commit id 
-	git logs --online
+	git log --online
 
 Create a branch
 ===============
@@ -58,7 +58,12 @@ switch one branch to another branch
 list the branch
 	git branch
 
+if you add and commit the file local repo
+===================================
+	git commit -a -m "change in logs cmds"
 
+
+git clean -n
 
 
 	

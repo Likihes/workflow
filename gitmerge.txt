@@ -1,0 +1,95 @@
+what is merge conflict?
+“A merge conflict occurs when two branches modify the same part of a file. 
+To resolve it, 
+I open the conflicted file, manually choose the correct changes, remove conflict markers, 
+stage the file using git add, and complete the merge using git commit.”
+
+
+What is a Merge Conflict?
+
+It happens when:
+
+Two branches changed the same line in a file
+Git doesn’t know which version to keep
+
+🔹 Example Conflict
+
+You’ll see something like this in a file:
+
+<<<<<<< HEAD
+hi
+=======
+hello
+>>>>>>> dev
+
+Meaning:
+HEAD → your current branch (e.g., main)
+dev → incoming branch
+You must decide what stays
+
+🔹 Step-by-Step: Resolve Merge Conflict
+
+✅ Step 1: Check status
+git status
+
+👉 It will show:
+both modified: file.txt
+
+✅ Step 2: Open the file
+
+vim file.txt
+(or use VS Code)
+
+✅ Step 3: Edit & Fix ✍️
+Remove conflict markers and choose:
+
+Option A: Keep current branch
+hi
+Option B: Keep incoming branch
+hello
+Option C: Combine both
+hi
+hello
+👉 Important: Remove:
+
+<<<<<<<
+=======
+>>>>>>>
+
+✅ Step 4: Mark as resolved
+git add file.txt
+
+✅ Step 5: Complete merge
+git commit
+
+👉 Git will auto-generate a merge commit message
+
+🔹 Full Flow Summary
+
+git merge dev
+# conflict happens
+
+git status
+
+# edit file manually
+
+git add file.txt
+
+git commit
+
+🔹 Abort Merge (if needed ❌)
+git merge --abort
+🔹 DevOps Real Example
+
+Two developers edit same Kubernetes file:
+
+replicas: 2   # main branch
+replicas: 5   # dev branch
+
+👉 Conflict → you decide correct value (e.g., replicas: 3)
+
+🔥 Tips to Avoid Conflicts
+Pull latest changes before working:
+git pull origin main
+Use small commits
+Communicate with team
