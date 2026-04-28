@@ -12,3 +12,53 @@ Add a file:
 
 	echo "Hello DevOps" > app.txt
 
+Step 3: Initialize Git Repository
+	git init
+		👉 This creates a hidden .git folder (your local repository)
+
+Step 4: Check Status
+	git status
+
+Step 5: Add File (Staging Area)
+	git add app.txt
+		or
+	git add .
+
+Step 6: Commit (Save to Local Repo)
+	git commit -m "Initial commit"
+		👉 Now your file is tracked by Git
+
+Step 7: Create Remote Repository
+	git remote add origin https://github.com/username/my-project.git
+
+step 8: check the remote repo
+	git remote -v
+
+Step 9: Push Code to Remote
+	git branch -M main(repository default branch is master then you can use this cmd)
+	git push -u origin main
+
+
+check the commit id 
+	git logs --online
+
+Create a branch
+===============
+
+create and swithch to the branch
+	git checkout -b <branchName>
+	git checkout -b dev
+
+create only branch name
+	git branch dev
+
+switch one branch to another branch
+	git checkout <branchName>
+
+list the branch
+	git branch
+
+
+
+
+	
