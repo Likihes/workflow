@@ -1,0 +1,80 @@
+wat is git tag?
+
+A tag is a named, permanent pointer to a specific commit typically for releases
+Tags help in versioning and easy rollback in CI/CD pipelines.
+Types of Tags
+	Lightweight tag → just a pointer to a commit
+	Annotated tag → includes metadata (author, message, date) ✅ recommended
+
+
+Practical Step-by-Step
+1️⃣ Create a Sample Repo
+
+	git init myproject
+cd myproject
+
+echo "Hello DevOps" > file.txt
+git add .
+git commit -m "Initial commit"
+
+2️⃣ Create a Lightweight Tag
+==========================
+git tag v1.0
+	This tags the latest commit as v1.0
+
+
+3️⃣ Create an Annotated Tag (Best Practice)
+===================================
+git tag -a v1.1 -m "Release version 1.1"
+
+4️⃣ View Tags
+===========
+git tag
+
+👉 Output:
+
+v1.0
+v1.1
+
+View Tag Details
+===================
+git show v1.1
+6️⃣ Tag a Specific Commit
+======================
+First get commit ID:
+
+git log --oneline
+
+Then:
+
+git tag -a v1.2 <commit-id> -m "Older version release"
+
+7️⃣ Push Tags to GitHub
+=====================
+By default, tags are NOT pushed.
+
+Push one tag:
+
+git push origin v1.1
+
+Push all tags:
+
+git push origin --tags
+8️⃣ Delete a Tag
+==============
+Delete locally:
+
+git tag -d v1.0
+
+Delete from remote:
+
+git push origin --delete v1.0
+9️⃣ Checkout a Tag
+================
+git checkout v1.1
+
+⚠️ This puts you in detached HEAD state.
+
+If you want to work from it:
+
+git checkout -b new-branch v1.1
