@@ -53,3 +53,5 @@ git stash pop
 
 ✔️ Restores changes
 ✔️ Removes stash
+
+================================================================
