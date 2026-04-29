@@ -1,0 +1,55 @@
+“Git stash is used to temporarily save uncommitted changes without committing them. 
+It helps switch branches quickly. We can use git stash, git stash apply, and git stash pop to manage changes efficiently.”
+
+git init stash-demo
+cd stash-demo
+
+echo "Version 1" > app.txt
+git add .
+git commit -m "Initial commit"
+
+# Modify file (but don't commit)
+echo "Work in progress" >> app.txt
+
+Check Status
+============
+git status
+
+👉 You’ll see modified file (not committed)
+
+3️⃣ Stash the Changes
+====================
+git stash
+
+✔️ Your working directory becomes clean
+✔️ Changes are saved in stash
+
+Switch Branch
+==============
+git checkout -b hotfix
+
+Now you can fix the bug without interference.
+
+6️⃣ View Stash List
+=================
+git stash list
+
+Example:
+
+stash@{0}: WIP on main: abc123 Initial commit
+
+7️⃣ Apply Stash
+=============
+
+7️⃣ Apply Stash
+git stash apply
+
+✔️ Restores your changes
+❌ Keeps stash in list
+
+8️⃣ Apply & Remove Stash
+=======================
+git stash pop
+
+✔️ Restores changes
+✔️ Removes stash
