@@ -1,0 +1,58 @@
+Squashing means combining multiple commits into one single commit.
+
+👉 Used to keep history clean before merging (especially in PRs)
+
+🔹 Step-by-Step Practical
+1️⃣ 
+Check Commit History
+====================
+	git log --oneline
+
+
+a1b2c3 fix typo
+d4e5f6 small change
+g7h8i9 added login
+
+2️⃣ Start Interactive Rebase
+==========================
+	git rebase -i HEAD~3
+
+3 Modify Rebase File
+==================
+pick g7h8i9 added login
+pick d4e5f6 small change
+pick a1b2c3 fix typo
+
+pick g7h8i9 added login
+squash d4e5f6 small change
+squash a1b2c3 fix typo
+
+4️⃣ Edit Commit Message
+=====================
+Git will open editor:
+
+added login
+small change
+fix typo
+
+Change to:
+
+Add login feature
+
+Save & exit.
+
+5️⃣ Verify Result
+================
+git log --oneline
+
+👉 Now only one clean commit:
+
+z9y8x7 Add login feature
+
+
+Important Notes
+Squashing rewrites history ⚠️
+If already pushed:
+git push origin branch-name --force
+
+👉 Be careful with shared branches
